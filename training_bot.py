@@ -5,7 +5,7 @@ import mmap
 import random
 import pickle
 import argparse
-
+# we will be using mps since there is no GPU for us
 
 if torch.backends.mps.is_available():
     device = "mps"
@@ -14,7 +14,7 @@ elif torch.cuda.is_available():
 else:
     device = "cpu"
 
-print(f"Using device: {device}")
+# print(f"Using device: {device}")
 
 parser = argparse.ArgumentParser(description='This is a demonstration program')
 
@@ -23,7 +23,7 @@ parser.add_argument('-batch_size', type=str, required=True, help='Please provide
 args = parser.parse_args()
 
 
-print(f'batch size: {args.batch_size}')
+# print(f'batch size: {args.batch_size}')
 
 
 
@@ -156,7 +156,6 @@ class Block(nn.Module):
     """ Transformer block: communication followed by computation """
 
     def __init__(self, n_embd, n_head):
-        # n_embd: embedding dimension, n_head: the number of heads we'd like
         super().__init__()
         head_size = n_embd // n_head
         self.sa = MultiHeadAttention(n_head, head_size)
@@ -196,13 +195,12 @@ class GPTLanguageModel(nn.Module):
         B, T = index.shape
         
         
-        # idx and targets are both (B,T) tensor of integers
         tok_emb = self.token_embedding_table(index) # (B,T,C)
         pos_emb = self.position_embedding_table(torch.arange(T, device=device)) # (T,C)
         x = tok_emb + pos_emb # (B,T,C)
-        x = self.blocks(x) # (B,T,C)
+        x = self.blocks(x)
         x = self.ln_f(x) # (B,T,C)
-        logits = self.lm_head(x) # (B,T,vocab_size)
+        logits = self.lm_head(x) 
         
         if targets is None:
             loss = None
