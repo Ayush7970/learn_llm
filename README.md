@@ -88,7 +88,7 @@ python model_script.py -batch_size [your-batch-size]
 
 Here’s a sample of the interactive text generation interface:
 
-![LLM Interactive Chat Example](./Tarrifarm.png)
+![LLM Interactive Chat Example](./Tarrifarm.jpg)
 
 ---
 
