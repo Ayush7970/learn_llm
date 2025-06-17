@@ -1,58 +1,125 @@
-# Theis LLM Project
 
-This project demonstrates a simple language model using the GPT architecture implemented with PyTorch. It includes functionality for training, evaluating, and generating text based on the transformer-based model.
+# 🤖 **Theis LLM Project**
 
-## Features
-- Self-Attention and Multi-Head Attention implementation
-- Customizable training parameters through command line arguments
-- Parallel processing for text extraction and vocabulary update
-- Text generation using the trained model
+A lightweight implementation of a transformer-based **Language Model (LLM)** using the **GPT architecture** with **PyTorch**. This project covers training, evaluation, and text generation, offering a customizable and extendable codebase for NLP enthusiasts and researchers.
 
-## Requirements
+---
 
-To run this project, you will need:
+## ✨ **Key Features**
+
+🚀 **Transformer Model**
+- Implements **self-attention** and **multi-head attention** mechanisms  
+- Supports customizable architecture (number of heads, layers, block size)
+
+⚡ **Efficient Training**
+- Parallel text extraction & vocabulary update using `concurrent.futures`
+- Progress tracking with `tqdm`
+- Command-line configurable hyperparameters
+
+📝 **Text Generation**
+- Interactive prompt for generating text using the trained model
+- Supports custom starting prompts and generation length
+
+🛠 **Customization**
+- Easily tweak model hyperparameters and dataset configurations in one place
+
+---
+
+## 📦 **Requirements**
+
+To run this project, you'll need:
+
 - Python 3.8+
-- PyTorch
+- [PyTorch](https://pytorch.org/)
 - tqdm
-- lzma
-- concurrent.futures
+- lzma (standard library)
+- concurrent.futures (standard library)
 
-## Installation
-
-Clone this repository to your local machine:
-```bash
-git clone [repository-url]
-```
-
-Install the required Python packages:
+💡 _Install dependencies via pip:_
 ```bash
 pip install torch tqdm
 ```
 
-## Usage
+---
 
-1. **Setting up the Dataset:**
-   - Place your `.xz` compressed text files in the specified data directory.
-   - Modify the `data_directory` variable in the script to point to your directory of `.xz` files.
+## 🛠 **Installation**
 
-2. **Training the Model:**
-   - Run the training script with the required batch size:
-   ```bash
-   python model_script.py -batch_size [your-batch-size]
-   ```
+1️⃣ **Clone the repository**
+```bash
+git clone [repository-url]
+cd Theis-LLM-Project
+```
 
-3. **Generating Text:**
-   - Use the interactive prompt to generate text:
-   ```bash
-   python model_script.py -batch_size [your-batch-size]
-   ```
+2️⃣ **Install the required Python packages**
+```bash
+pip install torch tqdm
+```
 
-## Configuration
+---
 
-Edit the parameters in the script to customize the model and training process:
-- `batch_size`
-- `block_size`
-- `max_steps`
-- `learning_rate`
-- `num_heads`
-- `num_layers`# learn_llm
+## ⚙ **Usage**
+
+### 📂 **Prepare the Dataset**
+- Place your `.xz` compressed text files into your dataset directory.
+- Update the `data_directory` variable in `model_script.py` to point to this directory.
+
+---
+
+### 🔥 **Train the Model**
+```bash
+python model_script.py -batch_size [your-batch-size]
+```
+Example:
+```bash
+python model_script.py -batch_size 64
+```
+
+---
+
+### 💬 **Generate Text**
+```bash
+python model_script.py -batch_size [your-batch-size]
+```
+✅ After training, use the interactive prompt to start generating text.
+
+---
+
+## ⚡ **Configurable Parameters**
+
+You can modify these directly in the script or via command-line:
+
+| Parameter       | Description                              |
+|-----------------|------------------------------------------|
+| `batch_size`     | Number of samples per batch              |
+| `block_size`     | Length of context window                 |
+| `max_steps`      | Total number of training steps           |
+| `learning_rate`  | Optimizer learning rate                  |
+| `num_heads`      | Number of attention heads                |
+| `num_layers`     | Number of transformer layers             |
+
+---
+
+## 🧠 **Future Enhancements**
+🌱 Planned features to take this project further:
+
+- Save & load trained models  
+- Add positional encoding visualization  
+- Implement beam search for better text generation  
+- Multi-GPU training support  
+
+---
+
+## 📝 **License**
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙌 **Contributors**
+
+Made with ❤️ by Theis LLM Team.
+
+---
+
+### ✅ **Tip:**  
+Replace `[repository-url]` with your actual GitHub repository link!
