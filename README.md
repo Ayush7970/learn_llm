@@ -5,6 +5,14 @@ A lightweight implementation of a transformer-based **Language Model (LLM)** usi
 
 ---
 
+## 🖼 **Example Screenshot**
+
+Here’s a sample of the interactive text generation interface:
+
+![LLM Interactive Chat Example](./Tarriffarm.jpg)
+
+---
+
 ## ✨ **Key Features**
 
 🚀 **Transformer Model**
@@ -81,14 +89,6 @@ python model_script.py -batch_size 64
 python model_script.py -batch_size [your-batch-size]
 ```
 ✅ After training, use the interactive prompt to start generating text.
-
----
-
-## 🖼 **Example Screenshot**
-
-Here’s a sample of the interactive text generation interface:
-
-![LLM Interactive Chat Example](./Tarriffarm.jpg)
 
 ---
 
