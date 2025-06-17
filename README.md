@@ -107,19 +107,4 @@ You can modify these directly in the script or via command-line:
 - Implement beam search for better text generation  
 - Multi-GPU training support  
 
----
 
-## 📝 **License**
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙌 **Contributors**
-
-Made with ❤️ by Theis LLM Team.
-
----
-
-### ✅ **Tip:**  
-Replace `[repository-url]` with your actual GitHub repository link!
